@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facial Emotion Detection</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+</head>
+
+<body>
+<p><h1>Tornado Upload App</h1></p>
+<form enctype="multipart/form-data" action="{{url_for('predict')}}" method="post">
+File: <input type="file" name="input_image" />
+{{predict_text}}
+</body>
+
+</html>
+
+
