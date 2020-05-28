@@ -21,7 +21,7 @@ face_classifier = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 def home():
     return render_template('index.html')
 
-@app.route('/predict')
+@app.route('/predict',methods=['POST'])
 def predict():
     image = request.files['input_image'][0]
     

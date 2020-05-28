@@ -6,10 +6,12 @@
 </head>
 
 <body>
-<p><h1>Tornado Upload App</h1></p>
+<p><h1>Detect image emotion</h1></p>
 <form enctype="multipart/form-data" action="{{url_for('predict')}}" method="post">
-File: <input type="file" name="input_image" />
-<p></p>
+     File: <input type="file" name="input_image" />
+     <button type=submit>Submit to get prediction</button>
+     <p></p>
+</form>
 {{predict_text}}
 </body>
 
