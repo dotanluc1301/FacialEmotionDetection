@@ -23,13 +23,13 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    image = request.files['input_image'][0]
+    image_file = request.files['input_image'][0]
     
-    gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(image_file,cv2.COLOR_BGR2GRAY)
     faces = face_classifier.detectMultiScale(gray,1.3,5)
 
     for (x,y,w,h) in faces:
-        cv2.rectangle(image,(x,y),(x+w,y+h),(255,0,0),2)
+        cv2.rectangle(image_file,(x,y),(x+w,y+h),(255,0,0),2)
         roi_gray = gray[y:y+h,x:x+w]
         roi_gray = cv2.resize(roi_gray,(48,48),interpolation=cv2.INTER_AREA)
     # rect,face,image = face_detector(frame)
